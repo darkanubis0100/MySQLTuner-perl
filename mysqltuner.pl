@@ -1847,8 +1847,7 @@ sub get_system_info {
     }
     infoprint "External IP           : " . $ext_ip;
     $result{'Network'}{'External Ip'} = $ext_ip;
-    badprint
-      "External IP           : Can't check, no Internet connectivity"
+    badprint "External IP           : Can't check, no Internet connectivity"
       unless defined($httpcli);
     infoprint "Name Servers          : "
       . infocmd_one "grep 'nameserver' /etc/resolv.conf \| awk '{print \$2}'";
